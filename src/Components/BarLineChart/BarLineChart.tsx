@@ -8,55 +8,53 @@ export default function BarLineChart() {
             label: '# of Lables',
             data: [12, 19, 3, 5, 2, 3],
             type: 'line',
-            borderColor: [
-                'rgba(54, 162, 235, 1)'
-            ],
+            backgroundColor: 'rgba(0, 0, 0, 0)',
+            borderColor: 'rgba(255, 99, 132, 1)',
             borderWidth: 1
         }, {
             label: '# of Colors',
             data: [2, 9, 13, 15, 12, 7],
             type: 'bar',
-            backgroundColor: [
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 99, 132, 0.2)'
-            ],
-            borderColor: [
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 99, 132, 1)'
-            ],
+            borderColor: 'rgba(75, 192, 192, 1)',
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
             borderWidth: 1
         }]
     };
 
     const options = {
+        responsive: true,
+        tooltips: {
+            mode: 'label'
+        },
         scales: {
-            x: {
-                grid:{
-                    display:false
+            xAxes: [{
+                gridLines: {
+                    drawBorder: true,
+                    drawTicks: true,
+                    lineWidth: 1
                 },
                 ticks: {
                     font: {
-                        size: 12
+                        size: 30
                     }
                 }
-            },
-            y: {
-                grid: {
-                    display:false
+            }],
+            yAxes: [{
+                gridLines: {
+                    drawBorder: true,
+                    drawTicks: true,
+                    lineWidth: 1
+                },
+                ticks: {
+                    precision: 0,
+                    stepSize: 4,
+                    beginAtZero: true,
+                    font: {
+                        size: 20
+                    }
                 }
-            }
-        },
-        tooltips: {
-            mode: 'label',
-        },
+            }]
+        }
     }
     return (
         <>

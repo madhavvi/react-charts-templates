@@ -1,15 +1,18 @@
 import React from 'react';
-import './App.css';
-import BarChart from '../BarChart/BarChart';
-import BarLineChart from '../BarLineChart/BarLineChart';
+import { Grid } from '@material-ui/core';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Routes from '../../Utils/routes';
 import Dashboard from '../Dashboard/Dashboard';
+import './App.css';
 
 function App() {
   return (
     <div className="App">
-        <Dashboard />
-        {/* <BarChart />
-        <BarLineChart /> */}
+      <Router>
+        <Grid item container lg={12} md={12} sm={12} className="main-container">
+            <Routes />
+        </Grid>
+      </Router>
     </div>
   );
 }

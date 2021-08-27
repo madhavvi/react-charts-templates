@@ -1,0 +1,14 @@
+.align-vertical-center {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 90%;
+    height: 300px;
+    margin: auto;
+}
+
+.card {
+    width: 250px;
+    height: 100px;
+}
