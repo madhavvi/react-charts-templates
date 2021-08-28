@@ -1,7 +1,11 @@
+import { Container, Grid, Link } from "@material-ui/core";
 import React from "react";
 import { Bar } from 'react-chartjs-2';
+import { useHistory } from "react-router-dom";
 
 export default function BarLineChart() {
+    const history = useHistory();
+
     const data = {
         labels: ['Label-1', 'Label-2', 'Label-3', 'Label-4', 'Label-5', 'Label-6'],
         datasets: [{
@@ -58,12 +62,22 @@ export default function BarLineChart() {
     }
     return (
         <>
-            <div style={{ width: '50vw', height: '50vh'}}>
-                <Bar
+        <Container>
+            <Grid style={{ padding: '30px 0'}}>
+                <h1>Bar-Line chart</h1>
+            </Grid>
+            <div style={{ width: '50vw', marginBottom: 50}}>
+                <Bar 
                     data={data}
                     options={options}
-                />
+                    />
             </div>
+            <Grid style={{ textAlign: 'left', marginBottom: 40}}>
+                <Link onClick={() => history.push('/')}>
+                    Back to Dashboard
+                </Link>
+            </Grid>
+        </Container>
         </>
     )
 }

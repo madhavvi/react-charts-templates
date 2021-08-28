@@ -2,6 +2,8 @@ import { Route, Switch } from "react-router-dom";
 import BarChart from "../Components/BarChart/BarChart";
 import BarLineChart from "../Components/BarLineChart/BarLineChart";
 import Dashboard from "../Components/Dashboard/Dashboard";
+import DonutChart from "../Components/DonutChart/DonutChart";
+import PieChart from "../Components/PieChart/PieChart";
 
 
 function Routes() {
@@ -18,10 +20,10 @@ function Routes() {
                     <BarLineChart />
                 </Route>
                 <Route exact path={`/pie-chart`}>
-                    {/* <User /> */}
+                    <PieChart />
                 </Route>
-                <Route exact path={`/account/profile`}>
-                    {/* <Profile /> */}
+                <Route exact path={`/donut-chart`}>
+                    <DonutChart />
                 </Route>
             </Switch>
         </div>

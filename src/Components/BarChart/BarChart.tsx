@@ -26,6 +26,21 @@ export default function BarChart() {
     };
 
     const options = {
+        legend: {
+            position: 'right',
+            align: 'start',
+            // maxHeight: 55,
+            // maxWidth: 100,
+            labels: {
+                padding: 20
+            },
+            onHover(e: any){
+                e.target.style.cursor = 'pointer'
+            },
+            onLeave(e: any){
+                e.target.style.cursor = 'default'
+            }
+        },
         scales: {
             xAxes: [{
                 gridLines: {
@@ -38,29 +53,32 @@ export default function BarChart() {
                 },
                 ticks: {
                     precision: 0,
-                    stepSize: 5,
-                    beginAtZero: true,
+                    stepSize: 4,
+                    beginAtZero: true
                 },
             }]
         },
         tooltips: {
-            mode: 'label',
+            mode: 'label'
         },
     }
     return (
         <>
         <Container>
-            <Grid style={{ textAlign: 'left', marginBottom: 40}}>
-                <Link onClick={() => history.push('/')}>
-                    Dashboard
-                </Link>
+            <Grid style={{ padding: '30px 0'}}>
+                <h1>Bar chart</h1>
             </Grid>
-            <div style={{ width: '50vw', height: '50vh'}}>
+            <div style={{ width: '50vw', marginBottom: 50}}>
                 <Bar 
                     data={data}
                     options={options}
-                    />
+                />
             </div>
+            <Grid style={{ textAlign: 'left', marginBottom: 40}}>
+                <Link onClick={() => history.push('/')}>
+                    Back to Dashboard
+                </Link>
+            </Grid>
         </Container>
         </>
     )

@@ -12,11 +12,14 @@
   padding: 30px;
   display: flex;
   box-sizing: border-box;
-  align-items: center;
-  flex-direction: row;
   width: 100vw;
   height: 100vh;
   justify-content: center;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none !important;
 }
 
 @keyframes App-logo-spin {

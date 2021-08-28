@@ -1,7 +1,5 @@
 import React from "react";
 import { Card, CardContent, Container, Grid, Link, Typography } from '@material-ui/core';
-import BarChart from "../BarChart/BarChart";
-import BarLineChart from "../BarLineChart/BarLineChart";
 import './Dashboard.css';
 import { useHistory } from "react-router-dom";
 
@@ -10,13 +8,13 @@ export default function Dashboard() {
     return (
     <>
     <Container>
-        <Grid>
+        <Grid className="dashboard-header">
             <h1>Dashboard</h1> 
         </Grid>
         <Grid item md={12} lg={12}>
             <Grid item md={12} lg={12} className="align-vertical-center">
                 <Card className="card">
-                    <CardContent>
+                    <CardContent className="card-content">
                         <Typography color="textSecondary" gutterBottom>
                             <Link onClick={() => history.push('/bar-chart')}>
                                 BAR Chart
@@ -25,33 +23,33 @@ export default function Dashboard() {
                     </CardContent>
                 </Card>
                 <Card className="card">
-                    <CardContent>
+                    <CardContent className="card-content">
                         <Typography color="textSecondary" gutterBottom>
                             <Link onClick={() => history.push('./line-chart')}>
-                                Mix BAR-LINE Chart
+                                BAR-LINE Chart
                             </Link>
                         </Typography>
                     </CardContent>
                 </Card>
                 <Card className="card">
-                    <CardContent>
+                    <CardContent className="card-content">
                         <Typography color="textSecondary" gutterBottom>
-                            BAR Chart
+                            <Link onClick={() => history.push('./pie-chart')}>
+                                PIE Chart
+                            </Link>
                         </Typography>
                     </CardContent>
                 </Card>
                 <Card className="card">
-                    <CardContent>
+                    <CardContent className="card-content">
                         <Typography color="textSecondary" gutterBottom>
-                            BAR Chart
+                            <Link onClick={() => history.push('./donut-chart')}>
+                                Doughnut Chart
+                            </Link>
                         </Typography>
                     </CardContent>
                 </Card>
             </Grid>
-        </Grid>
-        <Grid item md={6} lg={6}>
-            <BarChart />
-            <BarLineChart />
         </Grid>
     </Container>
     </>
